@@ -26,11 +26,12 @@ export async function POST(request: NextRequest) {
     }
 
     // プロンプトの構築
-    const basePrompt = `Create a YouTube thumbnail image with the following title prominently displayed: "${title}". 
-    The image should be eye-catching, clickable, and optimized for YouTube thumbnails (16:9 aspect ratio).
-    Include bold, readable text overlay.
-    ${description ? `Additional details: ${description}` : ''}
-    Style: ${stylePrompts[style as keyof typeof stylePrompts] || stylePrompts.realistic}`
+    const basePrompt = `Create a YouTube thumbnail image for a video titled "${title}". 
+    Focus on creating a visually striking image WITHOUT any text overlays.
+    The image should be eye-catching and represent the video content.
+    ${description ? `Additional context: ${description}` : ''}
+    Style: ${stylePrompts[style as keyof typeof stylePrompts] || stylePrompts.realistic}
+    Important: Do not include any text in the image, only visual elements.`
 
     const response = await openai.images.generate({
       model: 'dall-e-3',
