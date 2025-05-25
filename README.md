@@ -1,6 +1,6 @@
 # 自動サムネイル生成システム
 
-YouTube サムネイル画像を OpenAI DALL·E 3 API を使用して自動生成するシステムです。
+YouTube サムネイル画像をOpenAI DALL·E 3 APIを使用して自動生成するシステムです。
 
 ## セットアップ手順
 
