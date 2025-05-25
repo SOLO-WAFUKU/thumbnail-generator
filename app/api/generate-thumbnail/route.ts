@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
       style: 'vivid',
     })
 
-    const imageUrl = response.data[0].url
+    const imageUrl = response.data?.[0]?.url
 
     if (!imageUrl) {
       throw new Error('画像URLが取得できませんでした')
